@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="領収shoppingApp" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="JgA-gM-Hli" id="Pdd-81-jjO"/>
                 <outlet property="tableView" destination="5Bt-vF-aRq" id="gP9-8l-iZx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,17 +20,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-vF-aRq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-vF-aRq">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-gM-Hli">
+                    <rect key="frame" x="344" y="666" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bHO-ru-PJQ"/>
+                        <constraint firstAttribute="width" constant="50" id="hWT-Zg-1x6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="addButton:" destination="-1" eventType="touchUpInside" id="mIx-gd-XRZ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="5Bt-vF-aRq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DlW-4L-kcL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JgA-gM-Hli" secondAttribute="trailing" constant="20" id="PLP-gm-p1a"/>
                 <constraint firstItem="5Bt-vF-aRq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="R4s-i6-Fb1"/>
                 <constraint firstItem="5Bt-vF-aRq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Zds-vM-ImB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JgA-gM-Hli" secondAttribute="bottom" constant="20" id="jQP-gM-nXg"/>
                 <constraint firstItem="5Bt-vF-aRq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="li0-K4-mfQ"/>
             </constraints>
             <point key="canvasLocation" x="136.23188405797103" y="19.565217391304348"/>
@@ -38,6 +56,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

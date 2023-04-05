@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var addButton: UIButton!
+    
     var memoDataList: [MemoDataModel] = []
     
     override func viewDidLoad() {
@@ -18,14 +20,25 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         setMemoData()
+        configureButton()
 
     }
+    
+    @IBAction func addButton(_ sender: Any) {
+        let memoDetilViewController = MemoDetailViewController()
+        present(memoDetilViewController, animated: true)
+    }
+    
     
     func setMemoData() {
         for i in 1...5 {
             let memoDataModel = MemoDataModel(memoTitle: "このメモは\(i)番目のメモです。")
             memoDataList.append(memoDataModel)
         }
+    }
+    
+    func configureButton() {
+        addButton.layer.cornerRadius = addButton.bounds.width / 2
     }
 
 }

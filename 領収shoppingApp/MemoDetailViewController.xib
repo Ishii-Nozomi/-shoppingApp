@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemoDetailViewController" customModule="領収shoppingApp" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="HqZ-jL-hjO" id="rOz-D6-jDx"/>
-                <outlet property="customCell" destination="7aF-KI-lvp" id="Oiu-kd-Q6u"/>
                 <outlet property="inputTitleTextField" destination="VGj-om-Kue" id="VQB-5B-k6h"/>
                 <outlet property="memoTableView" destination="Qid-RP-hbu" id="vhf-ez-HtP"/>
                 <outlet property="saveButton" destination="2n3-0n-Qu3" id="4hf-dD-m8z"/>
@@ -42,14 +41,6 @@
                     <rect key="frame" x="0.0" y="134" width="414" height="602"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-KI-lvp" customClass="TableViewCell" customModule="領収shoppingApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="148" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7aF-KI-lvp" id="VId-JI-uuj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tableViewCellContentView>
-                </tableViewCell>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

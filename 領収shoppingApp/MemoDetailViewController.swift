@@ -4,7 +4,7 @@
 //
 //  Created by NOZOMI ISHII on 2023/04/05.
 //
-
+import Foundation
 import UIKit
 
 class MemoDetailViewController: UIViewController {
@@ -13,23 +13,34 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var inputTitleTextField: UITextField!
     @IBOutlet weak var memoTableView: UITableView!
+    @IBOutlet weak var customCell: UITableViewCell!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        memoTableView.dataSource = self
+        memoTableView.delegate = self
+        memoTableView.register(UINib(nibName: "TableViewCell", bundle: nil),forCellReuseIdentifier: "cell")
+        inputTitleTextField.placeholder = "タイトル"
 
-        // Do any additional setup after loading the view.
+
     }
 
+    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = memoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        return cell
+    }
+    
+    
 }

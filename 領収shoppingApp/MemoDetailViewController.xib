@@ -11,8 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemoDetailViewController" customModule="領収shoppingApp" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="HqZ-jL-hjO" id="rOz-D6-jDx"/>
+                <outlet property="customCell" destination="7aF-KI-lvp" id="Oiu-kd-Q6u"/>
                 <outlet property="inputTitleTextField" destination="VGj-om-Kue" id="VQB-5B-k6h"/>
-                <outlet property="memoTableView" destination="jaN-sj-q7c" id="8ex-gm-zdX"/>
+                <outlet property="memoTableView" destination="Qid-RP-hbu" id="vhf-ez-HtP"/>
                 <outlet property="saveButton" destination="2n3-0n-Qu3" id="4hf-dD-m8z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,46 +24,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqZ-jL-hjO">
-                    <rect key="frame" x="20" y="20" width="77" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="c5k-tb-M6b"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="30" width="77" height="30"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="キャンセル"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-0n-Qu3">
-                    <rect key="frame" x="317" y="20" width="77" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="BCq-aE-RDD"/>
-                        <constraint firstAttribute="width" constant="77" id="GG7-Hs-4HQ"/>
-                    </constraints>
+                    <rect key="frame" x="363" y="30" width="31" height="30"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="保存"/>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-om-Kue">
-                    <rect key="frame" x="20" y="60" width="374" height="34"/>
+                    <rect key="frame" x="20" y="80" width="374" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jaN-sj-q7c">
-                    <rect key="frame" x="0.0" y="104" width="414" height="632"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-RP-hbu">
+                    <rect key="frame" x="0.0" y="134" width="414" height="602"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-KI-lvp" customClass="TableViewCell" customModule="領収shoppingApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="148" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7aF-KI-lvp" id="VId-JI-uuj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="jaN-sj-q7c" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BQ1-7Z-LB0"/>
-                <constraint firstItem="VGj-om-Kue" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ca4-yU-qEc"/>
-                <constraint firstItem="HqZ-jL-hjO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="L5Y-TL-beM"/>
-                <constraint firstItem="jaN-sj-q7c" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="OVU-yG-7Gx"/>
-                <constraint firstItem="jaN-sj-q7c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OgN-ze-1Kg"/>
-                <constraint firstItem="HqZ-jL-hjO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ol6-7u-gLB"/>
-                <constraint firstItem="jaN-sj-q7c" firstAttribute="top" secondItem="VGj-om-Kue" secondAttribute="bottom" constant="10" id="Xaj-af-FGf"/>
-                <constraint firstItem="2n3-0n-Qu3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="evi-jA-b4T"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2n3-0n-Qu3" secondAttribute="trailing" constant="20" id="jXw-tU-jPf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VGj-om-Kue" secondAttribute="trailing" constant="20" id="oDK-At-cTn"/>
-                <constraint firstItem="VGj-om-Kue" firstAttribute="top" secondItem="HqZ-jL-hjO" secondAttribute="bottom" constant="10" id="pMy-1R-wek"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VGj-om-Kue" secondAttribute="trailing" constant="20" id="2NC-ox-Zc4"/>
+                <constraint firstItem="VGj-om-Kue" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FcG-cz-g79"/>
+                <constraint firstItem="Qid-RP-hbu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FyU-kQ-B0q"/>
+                <constraint firstItem="Qid-RP-hbu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Gft-F9-EVo"/>
+                <constraint firstItem="2n3-0n-Qu3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Jw7-hI-3wn"/>
+                <constraint firstItem="VGj-om-Kue" firstAttribute="top" secondItem="HqZ-jL-hjO" secondAttribute="bottom" constant="20" id="aKe-hq-njV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2n3-0n-Qu3" secondAttribute="trailing" constant="20" id="afw-Hh-Qdg"/>
+                <constraint firstItem="Qid-RP-hbu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fwB-UA-XfB"/>
+                <constraint firstItem="HqZ-jL-hjO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="goQ-j8-ZYC"/>
+                <constraint firstItem="HqZ-jL-hjO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="knA-NR-MrZ"/>
+                <constraint firstItem="Qid-RP-hbu" firstAttribute="top" secondItem="VGj-om-Kue" secondAttribute="bottom" constant="20" id="s2Z-Ae-k4r"/>
             </constraints>
             <point key="canvasLocation" x="34.782608695652179" y="19.565217391304348"/>
         </view>

@@ -13,7 +13,18 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var inputTitleTextField: UITextField!
     @IBOutlet weak var memoTableView: UITableView!
-    @IBOutlet weak var customCell: UITableViewCell!
+    
+    enum Cell: Int, CaseIterable {
+        case TableViewCell
+        case AddButtonTableViewCell
+        
+        var cellIdentifier: String {
+            switch self {
+            case.TableViewCell: return "cell"
+            case.AddButtonTableViewCell: return "ButtonCell"
+            }
+        }
+    }
     
     
     
@@ -22,6 +33,7 @@ class MemoDetailViewController: UIViewController {
         memoTableView.dataSource = self
         memoTableView.delegate = self
         memoTableView.register(UINib(nibName: "TableViewCell", bundle: nil),forCellReuseIdentifier: "cell")
+        memoTableView.register(UINib(nibName: "AddButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "ButtonCell")
         inputTitleTextField.placeholder = "タイトル"
 
 
@@ -34,12 +46,19 @@ class MemoDetailViewController: UIViewController {
 
 extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return Cell.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = memoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        return cell
+        let cellType = Cell(rawValue: indexPath.row)!
+        switch cellType {
+        case.TableViewCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellType.cellIdentifier) as! TableViewCell
+            return cell
+        case .AddButtonTableViewCell:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellType.cellIdentifier) as! AddButtonTableViewCell
+            return cell
+        }
     }
     
     

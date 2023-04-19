@@ -10,6 +10,11 @@ import UIKit
 class AddButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var addCellButton: UIButton!
     
+    
+    @IBAction func addCellButton(_ sender: Any) {
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

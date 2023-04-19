@@ -29,6 +29,12 @@ class TableViewCell: UITableViewCell {
        
         
     }
+    
+    class func initForomNid() -> TableViewCell {
+        // xibファイルのオブジェクトをインスタンス化
+        let className: String = String(describing: TableViewCell.self)
+        return Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! TableViewCell
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

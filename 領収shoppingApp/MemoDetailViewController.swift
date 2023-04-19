@@ -14,6 +14,8 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var inputTitleTextField: UITextField!
     @IBOutlet weak var memoTableView: UITableView!
     
+    var cellArray: NSMutableArray = NSMutableArray.init()
+    
     enum Cell: Int, CaseIterable {
         case TableViewCell
         case AddButtonTableViewCell

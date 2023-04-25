@@ -21,7 +21,24 @@ class TableViewCell: UITableViewCell {
     // チェックボックス
     @IBOutlet weak var checkButton: UIButton!
     
-   
+    @IBAction func tax8Button(_ sender: Any) {
+        let aPlaceText = Double(priceText.text!)
+        let aPlaceText2 = aPlaceText! * 1.08
+        let aPlaceText3 = Int(aPlaceText2)
+        let eightTax = String(aPlaceText3)
+        
+        priceText.text = eightTax
+        
+    }
+    
+    @IBAction func tax10Button(_ sender: Any) {
+        let bPlaceText = Double(priceText.text!)
+        let bPlaceText2 = bPlaceText! * 1.1
+        let bPlaceText3 = Int(bPlaceText2)
+        let tenTax = String(bPlaceText3)
+        
+        priceText.text = tenTax
+    }
     
     
     override func awakeFromNib() {

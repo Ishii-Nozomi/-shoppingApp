@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol TableViewDelegate {
+    func buttonTapAction()
+}
+
 class AddButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var addCellButton: UIButton!
     
+    var delegate: TableViewDelegate?
+    
     
     @IBAction func addCellButton(_ sender: Any) {
+        delegate?.buttonTapAction()
     }
     
     

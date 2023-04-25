@@ -46,6 +46,9 @@
                         <state key="normal" title="10%">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="tax10Button:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cqy-VZ-dTl"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-GN-tsx">
                         <rect key="frame" x="240" y="0.0" width="40" height="45"/>
@@ -56,6 +59,9 @@
                         <state key="normal" title="8%">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="tax8Button:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bd6-eG-joB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

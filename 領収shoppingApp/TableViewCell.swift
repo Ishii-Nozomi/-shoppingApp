@@ -57,6 +57,7 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         memoText.placeholder = "買うもの"
         priceText.placeholder = "0"
+        priceText.keyboardType = .numberPad
 
         
     }

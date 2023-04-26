@@ -12,9 +12,13 @@ class TableFooterView: UITableViewHeaderFooterView {
     @IBOutlet weak var totalLabel: UILabel!
     
 
-    @IBOutlet weak var totalText: UITextField!
-     
+    @IBOutlet weak var totalTextLabel: UILabel!
+    
     @IBOutlet weak var yenLabel: UILabel!
     
-
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
 }

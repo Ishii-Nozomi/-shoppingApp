@@ -131,11 +131,11 @@
 				C8854F1629E86B5600A7F930 /* AddButtonTableViewCell.swift */,
 				C8854F1729E86B5600A7F930 /* AddButtonTableViewCell.xib */,
 				C8854F0C29E861AB00A7F930 /* Checkbox.swift */,
+				C8A4D83E29F6C4C500DFAB9A /* TableFooterView.swift */,
+				C8A4D84229F6C52B00DFAB9A /* TableFooterView.xib */,
 				C8DA05E529DC0E28001E7DC5 /* Assets.xcassets */,
 				C8DA05E729DC0E28001E7DC5 /* LaunchScreen.storyboard */,
 				C8DA05EA29DC0E28001E7DC5 /* Info.plist */,
-				C8A4D83E29F6C4C500DFAB9A /* TableFooterView.swift */,
-				C8A4D84229F6C52B00DFAB9A /* TableFooterView.xib */,
 			);
 			path = "領収shoppingApp";
 			sourceTree = "<group>";

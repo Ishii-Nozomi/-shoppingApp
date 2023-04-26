@@ -38,9 +38,7 @@ class MemoDetailViewController: UIViewController {
         memoTableView.delegate = self
         memoTableView.register(UINib(nibName: "TableViewCell", bundle: nil),forCellReuseIdentifier: "cell")
         memoTableView.register(UINib(nibName: "AddButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "ButtonCell")
-        let nib = UINib(nibName: "TableFooterView", bundle: nil)
-        memoTableView.register(nib, forHeaderFooterViewReuseIdentifier: "TableFooterView")
-        memoTableView.sectionFooterHeight = 120
+        memoTableView.register(UINib(nibName: "TableFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: "TableFooterView")
         inputTitleTextField.placeholder = "タイトル"
 
 
@@ -75,9 +73,19 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = memoTableView.dequeueReusableHeaderFooterView(withIdentifier: "TableFooterView")
-        return view
+        let footerView = Bundle.main.loadNibNamed("TableFooterView", owner: self, options: nil)?.first as! TableFooterView
+        memoTableView.tableFooterView = footerView
+        return footerView
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = .systemBlue
+    }
+    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

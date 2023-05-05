@@ -21,24 +21,6 @@ class TableViewCell: UITableViewCell {
     // チェックボックス
     @IBOutlet weak var checkButton: UIButton!
     
-    @IBAction func tax8Button(_ sender: Any) {
-        let aPlaceText = Double(priceText.text!)
-        let aPlaceText2 = aPlaceText! * 1.08
-        let aPlaceText3 = Int(aPlaceText2)
-        let eightTax = String(aPlaceText3)
-        
-        priceText.text = eightTax
-        
-    }
-    
-    @IBAction func tax10Button(_ sender: Any) {
-        let bPlaceText = Double(priceText.text!)
-        let bPlaceText2 = bPlaceText! * 1.1
-        let bPlaceText3 = Int(bPlaceText2)
-        let tenTax = String(bPlaceText3)
-        
-        priceText.text = tenTax
-    }
     
     
     override func awakeFromNib() {
@@ -62,4 +44,79 @@ class TableViewCell: UITableViewCell {
         
     }
     
+    
+    
+    @IBAction func tax8Button(_ sender: Any) {
+        // テキストから金額を取得（ボタンの切り替え前に取得しておく）
+        guard let price = Double(priceText.text!) else {
+            return
+        }
+        // 金額を一度税抜きにもどす
+        let withoutTaxPrice = removeTax(price: price)
+
+        // ON, OFFを切り替える
+        tax8Button.isSelected = !tax8Button.isSelected
+        // 10%ボタンをOFFにする
+        tax10Button.isSelected = false
+        
+        // 税込金額を計算する（ボタンを切り替えた後に再計算）
+        let taxInPrice = addTax(price: withoutTaxPrice)
+        // テキストフィールドにセット
+        priceText.text = String(Int(taxInPrice))
+        
+    }
+    
+    @IBAction func tax10Button(_ sender: Any) {
+        // テキストから金額を取得（ボタンの切り替え前に取得しておく）
+        guard let price = Double(priceText.text!) else {
+            return
+        }
+        // 金額を一度税抜きにもどす
+        let withoutTaxPrice = removeTax(price: price)
+
+        // ON, OFFを切り替える
+        tax10Button.isSelected = !tax10Button.isSelected
+        // 8%ボタンをOFFにする
+        tax8Button.isSelected = false
+        
+        // 税込金額を計算する（ボタンを切り替えた後に再計算）
+        let taxInPrice = addTax(price: withoutTaxPrice)
+        // テキストフィールドにセット
+        priceText.text = String(Int(taxInPrice))
+    }
+    
+    /// 税抜き金額を取得
+    private func removeTax(price: Double) -> Double {
+        // 税率の計算
+        var tax: Double = 1.0
+        if tax8Button.isSelected {
+            // 8%ボタンがONの場合
+            tax = 1.08
+        } else if tax10Button.isSelected {
+            // 10%ボタンがONの場合
+            tax = 1.1
+        }
+        // 税抜き金額を返す（round: 四捨五入）
+        return round(price / tax)
+    }
+    
+    /// 税込金額を取得
+    private func addTax(price: Double) -> Double {
+        // 税率の計算
+        var tax: Double = 1.0
+        if tax8Button.isSelected {
+            // 8%ボタンがONの場合
+            tax = 1.08
+        } else if tax10Button.isSelected {
+            // 10%ボタンがONの場合
+            tax = 1.1
+        }
+        // 税込金額を返す（round: 四捨五入）
+        return round(price * tax)
+    }
+    
 }
+
+
+
+

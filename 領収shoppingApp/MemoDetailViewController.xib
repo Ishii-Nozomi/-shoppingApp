@@ -26,6 +26,9 @@
                     <rect key="frame" x="20" y="30" width="77" height="30"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="キャンセル"/>
+                    <connections>
+                        <action selector="cancelButton:" destination="-1" eventType="touchUpInside" id="Tje-hd-bEO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-0n-Qu3">
                     <rect key="frame" x="363" y="30" width="31" height="30"/>
@@ -38,22 +41,32 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-RP-hbu">
-                    <rect key="frame" x="0.0" y="134" width="414" height="602"/>
+                    <rect key="frame" x="0.0" y="134" width="414" height="502"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTn-UA-8LZ" customClass="TableFooterView" customModule="領収shoppingApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="644" width="414" height="92"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="6Yl-7V-cKl"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VGj-om-Kue" secondAttribute="trailing" constant="20" id="2NC-ox-Zc4"/>
+                <constraint firstItem="rTn-UA-8LZ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Ald-5g-s0B"/>
+                <constraint firstItem="rTn-UA-8LZ" firstAttribute="top" secondItem="Qid-RP-hbu" secondAttribute="bottom" constant="8" id="FEh-NR-DEO"/>
                 <constraint firstItem="VGj-om-Kue" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FcG-cz-g79"/>
                 <constraint firstItem="Qid-RP-hbu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FyU-kQ-B0q"/>
-                <constraint firstItem="Qid-RP-hbu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Gft-F9-EVo"/>
+                <constraint firstItem="rTn-UA-8LZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G3W-u8-gJp"/>
                 <constraint firstItem="2n3-0n-Qu3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Jw7-hI-3wn"/>
                 <constraint firstItem="VGj-om-Kue" firstAttribute="top" secondItem="HqZ-jL-hjO" secondAttribute="bottom" constant="20" id="aKe-hq-njV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2n3-0n-Qu3" secondAttribute="trailing" constant="20" id="afw-Hh-Qdg"/>
                 <constraint firstItem="Qid-RP-hbu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fwB-UA-XfB"/>
                 <constraint firstItem="HqZ-jL-hjO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="goQ-j8-ZYC"/>
+                <constraint firstItem="rTn-UA-8LZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kTQ-kJ-Nu0"/>
                 <constraint firstItem="HqZ-jL-hjO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="knA-NR-MrZ"/>
                 <constraint firstItem="Qid-RP-hbu" firstAttribute="top" secondItem="VGj-om-Kue" secondAttribute="bottom" constant="20" id="s2Z-Ae-k4r"/>
             </constraints>

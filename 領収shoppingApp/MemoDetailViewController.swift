@@ -7,6 +7,21 @@
 import Foundation
 import UIKit
 
+struct ShoppingInfo {
+    var isChecked: Bool = false //チェックされているか
+    var priceString: String = "" //金額
+    var name: String = "" //商品名
+    var tax: TaxRare = .none //税率
+}
+
+// 税率
+enum TaxRare: Int {
+    case none = 0
+    case eight = 8
+    case ten = 10
+}
+
+
 class MemoDetailViewController: UIViewController {
 
     @IBOutlet weak var cancelButton: UIButton!
@@ -15,7 +30,7 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var memoTableView: UITableView!
     
 
-    var array = [TableViewCell(), AddButtonTableViewCell()]
+    var array: [ShoppingInfo] = []
     
     
     enum Cell: Int, CaseIterable {
@@ -28,6 +43,25 @@ class MemoDetailViewController: UIViewController {
             case.AddButtonTableViewCell: return "ButtonCell"
             }
         }
+    }
+    
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        // アラートを表示させる
+        let alert = UIAlertController(title: "メモの保存", message: "メモの変更が保存されていませんが、よろしいですか？", preferredStyle: .alert)
+        // メモの変更なしでホーム画面に戻る
+        let close = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        // メモ詳細画面に戻る
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
+            alert.dismiss(animated: true)
+        }
+        
+        alert.addAction(close)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+        
     }
     
     
@@ -44,6 +78,17 @@ class MemoDetailViewController: UIViewController {
 
     }
 
+    private func totalPrice() -> Int {
+        var total = 0
+        
+        // filter -> {}内の条件で絞る
+        // forEach -> 配列の中身を全部ループさせる
+        array.filter{ $0.isChecked }.forEach{ info in
+            let price = Int(info.priceString)
+            total += price ?? 0
+        }
+        return total
+    }
     
 
 }
@@ -51,12 +96,16 @@ class MemoDetailViewController: UIViewController {
 
 extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        // arrayに格納されているShoppingInfoの数だけセルが生成される
+        // 追加ボタンセルを作りたいので +1　する
+        return array.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellType: Cell
-        if indexPath.row == array.count - 1 {
+        if indexPath.row == array.count {
+            // 最後のセルを追加ボタンセルにする
+            // 全部でarray.count+1個あるので、最後のセルのインデックスはarray.countになる
             cellType = .AddButtonTableViewCell
         } else {
             cellType = .TableViewCell
@@ -64,6 +113,21 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
         switch cellType {
         case.TableViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellType.cellIdentifier) as! TableViewCell
+            // セルの行番号に該当する情報を取得
+            let info = array[indexPath.row]
+            // 取得した情報をセルにセット
+            cell.memoText.text = info.name
+            cell.priceText.text = info.priceString
+            
+            // 税率ボタンの選択状態の初期化
+            cell.tax8Button.isSelected = false
+            cell.tax10Button.isSelected = false
+            // 情報に合わせて選択状態をセット
+            if info.tax == .eight {
+                cell.tax8Button.isSelected = true
+            } else if info.tax == .ten {
+                cell.tax10Button.isSelected = true
+            }
             return cell
         case .AddButtonTableViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellType.cellIdentifier) as! AddButtonTableViewCell
@@ -72,15 +136,7 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = Bundle.main.loadNibNamed("TableFooterView", owner: self, options: nil)?.first as! TableFooterView
-        memoTableView.tableFooterView = footerView
-        return footerView
-    }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 90
-    }
     
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.tintColor = .systemBlue
@@ -110,8 +166,14 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MemoDetailViewController: TableViewDelegate {
     func buttonTapAction() {
-        let cell: TableViewCell = TableViewCell.initForomNid()
-        array.append(cell)
+        // 追加ボタンを押した時の処理
+//        let cell: TableViewCell = TableViewCell.initForomNid()
+//        array.append(cell)
+        
+        // 空の買い物情報を追加する
+        let newInfo = ShoppingInfo()
+        array.append(newInfo)
+        
         memoTableView.reloadData()
     }
 }

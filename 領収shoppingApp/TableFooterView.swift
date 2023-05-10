@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableFooterView: UITableViewHeaderFooterView {
+class TableFooterView: UIView {
 
     @IBOutlet weak var totalLabel: UILabel!
     
@@ -19,6 +19,21 @@ class TableFooterView: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        loadNib()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    
+    func loadNib() {
+        let view = Bundle(for: type(of: self)).loadNibNamed("TableFooterView", owner: self, options: nil)?.first as! UIView
+        view.frame = self.bounds
+        self.addSubview(view)
     }
     
 }

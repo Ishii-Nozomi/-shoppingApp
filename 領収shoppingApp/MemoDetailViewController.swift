@@ -6,20 +6,7 @@
 //
 import Foundation
 import UIKit
-
-struct ShoppingInfo {
-    var isChecked: Bool = false //チェックされているか
-    var priceString: String = "" //金額
-    var name: String = "" //商品名
-    var tax: TaxRare = .none //税率
-}
-
-// 税率
-enum TaxRare: Int {
-    case none = 0
-    case eight = 8
-    case ten = 10
-}
+import RealmSwift
 
 
 class MemoDetailViewController: UIViewController {
@@ -29,8 +16,9 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var inputTitleTextField: UITextField!
     @IBOutlet weak var memoTableView: UITableView!
     
+    let realm = try! Realm()
 
-    var array: [ShoppingInfo] = []
+    var array: [MemoDataModel] = []
     
     
     enum Cell: Int, CaseIterable {
@@ -65,6 +53,10 @@ class MemoDetailViewController: UIViewController {
     }
     
     
+    @IBAction func saveButton(_ sender: Any) {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +76,7 @@ class MemoDetailViewController: UIViewController {
         // filter -> {}内の条件で絞る
         // forEach -> 配列の中身を全部ループさせる
         array.filter{ $0.isChecked }.forEach{ info in
-            let price = Int(info.priceString)
+            let price = Int(info.price)
             total += price ?? 0
         }
         return total
@@ -116,16 +108,16 @@ extension MemoDetailViewController: UITableViewDataSource, UITableViewDelegate {
             // セルの行番号に該当する情報を取得
             let info = array[indexPath.row]
             // 取得した情報をセルにセット
-            cell.memoText.text = info.name
-            cell.priceText.text = info.priceString
+            cell.memoText.text = info.memo
+            cell.priceText.text = info.price
             
             // 税率ボタンの選択状態の初期化
             cell.tax8Button.isSelected = false
             cell.tax10Button.isSelected = false
             // 情報に合わせて選択状態をセット
-            if info.tax == .eight {
+            if info.tax == .tax8 {
                 cell.tax8Button.isSelected = true
-            } else if info.tax == .ten {
+            } else if info.tax == .tax10 {
                 cell.tax10Button.isSelected = true
             }
             return cell
@@ -171,7 +163,7 @@ extension MemoDetailViewController: TableViewDelegate {
 //        array.append(cell)
         
         // 空の買い物情報を追加する
-        let newInfo = ShoppingInfo()
+        let newInfo = MemoDataModel()
         array.append(newInfo)
         
         memoTableView.reloadData()

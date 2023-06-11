@@ -34,6 +34,9 @@
                     <rect key="frame" x="363" y="30" width="31" height="30"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="saveButton:" destination="-1" eventType="touchUpInside" id="YTz-Fd-wy4"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-om-Kue">
                     <rect key="frame" x="20" y="80" width="374" height="34"/>

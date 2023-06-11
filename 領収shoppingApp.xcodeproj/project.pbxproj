@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0FBD903521962530B97E41A5 /* Pods___shoppingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF037CCB6947B261D5593DC /* Pods___shoppingAppTests.framework */; };
-		2A5B7E749D241F38414DEB82 /* Pods___shoppingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0AC4A5C3604D6A8C1B3594 /* Pods___shoppingApp.framework */; };
 		9DAE9981BBA9BCF01B3531B2 /* Pods___shoppingApp___shoppingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0871A649B19633179AEEEC /* Pods___shoppingApp___shoppingAppUITests.framework */; };
 		C84916AA29DDB39F00CC7E22 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84916A829DDB39F00CC7E22 /* MemoDetailViewController.swift */; };
 		C84916AB29DDB39F00CC7E22 /* MemoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84916A929DDB39F00CC7E22 /* MemoDetailViewController.xib */; };
@@ -52,9 +51,9 @@
 		20F07D6A2247176C104881C1 /* Pods-領収shoppingApp-領収shoppingAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingApp-領収shoppingAppUITests.release.xcconfig"; path = "Target Support Files/Pods-領収shoppingApp-領収shoppingAppUITests/Pods-領収shoppingApp-領収shoppingAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		21749738C8BA51479DF929AE /* Pods-領収shoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingApp.debug.xcconfig"; path = "Target Support Files/Pods-領収shoppingApp/Pods-領収shoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2363DE1FB7835777B829B795 /* Pods-領収shoppingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-領収shoppingAppTests/Pods-領収shoppingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9F0871A649B19633179AEEEC /* Pods___shoppingApp___shoppingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___shoppingApp___shoppingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0871A649B19633179AEEEC /* Pods___shoppingApp___shoppingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___shoppingApp___shoppingAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCDCA857C11AC6D2C0A6245 /* Pods-領収shoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingApp.release.xcconfig"; path = "Target Support Files/Pods-領収shoppingApp/Pods-領収shoppingApp.release.xcconfig"; sourceTree = "<group>"; };
-		BFF037CCB6947B261D5593DC /* Pods___shoppingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___shoppingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFF037CCB6947B261D5593DC /* Pods___shoppingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___shoppingAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84916A829DDB39F00CC7E22 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
 		C84916A929DDB39F00CC7E22 /* MemoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoDetailViewController.xib; sourceTree = "<group>"; };
 		C8854EF629E1313D00A7F930 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -79,7 +78,7 @@
 		C8F7DE9129DC106200FDF452 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C8F7DE9229DC106200FDF452 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		ECA203D1783521A90278CA61 /* Pods-領収shoppingApp-領収shoppingAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingApp-領収shoppingAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-領収shoppingApp-領収shoppingAppUITests/Pods-領収shoppingApp-領収shoppingAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EE0AC4A5C3604D6A8C1B3594 /* Pods___shoppingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___shoppingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0AC4A5C3604D6A8C1B3594 /* Pods___shoppingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___shoppingApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C4A6ACA5570A0CD7B78E24 /* Pods-領収shoppingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-領収shoppingAppTests.release.xcconfig"; path = "Target Support Files/Pods-領収shoppingAppTests/Pods-領収shoppingAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5B7E749D241F38414DEB82 /* Pods___shoppingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +119,6 @@
 				2363DE1FB7835777B829B795 /* Pods-領収shoppingAppTests.debug.xcconfig */,
 				F1C4A6ACA5570A0CD7B78E24 /* Pods-領収shoppingAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
